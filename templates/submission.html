@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Past Submissions</h2>
+
+<table>
+<tr>
+<th>Restaurant</th>
+<th>Manager</th>
+<th>Date</th>
+<th>Score</th>
+<th>Result</th>
+</tr>
+
+{% for audit in audits %}
+<tr>
+<td>{{ audit.restaurant_number }}</td>
+<td>{{ audit.manager_name }}</td>
+<td>{{ audit.date }}</td>
+<td>{{ audit.percentage }}%</td>
+<td>{{ audit.result }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
