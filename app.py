@@ -3,6 +3,8 @@ from models import db, AuditSubmission
 from scoring import calculate_score
 from pdf_generator import generate_pdf
 from email_utils import send_email, get_recipient
+from dotenv import load_dotenv
+load_dotenv()
 import os
 
 app = Flask(__name__)
