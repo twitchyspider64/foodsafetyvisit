@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Food Safety Audit</h2>
+
+<form method="POST" action="/submit">
+
+<input name="restaurant_number" placeholder="Restaurant Number" required>
+<input name="manager_name" placeholder="Manager Name" required>
+<input type="date" name="date" required>
+
+<hr>
+
+{% for i in range(9,34) %}
+<label>FS{{i}}</label>
+<select name="FS{{i}}">
+  <option value="Correct">Correct</option>
+  <option value="Needs Action">Needs Action</option>
+</select>
+<br>
+{% endfor %}
+
+<button type="submit">Submit Audit</button>
+
+</form>
+
+{% endblock %}
